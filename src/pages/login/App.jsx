@@ -1,7 +1,18 @@
-import logo from './img/logo.png';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import logo from '../../img/logo.png';
 import './App.css';
 
 function App() {
+  const history = useHistory();
+
+  function handleClick() {
+    alert('Ola');
+    history.push('/dashboard');
+  }
+
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,7 +23,10 @@ function App() {
         <label>Senha:</label>
         <input type="password" placeholder="Entre com a sua senha" className='input'/>
         <br />  
-        <button type='submit' className='myButton'>Entrar</button>
+        <button type='submit' className='myButton' onClick={() => handleClick()}>Entrar</button>
+        <div onClick={() => handleClick()}>
+          <a>Esqueceu sua senha?</a>
+        </div>
       </header>
     </div>
   );
